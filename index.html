@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue</title>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="counter">
+        <div class="counter__body">
+          <h1 class="counter__title">Счетчик сейчас: {{ counter }}</h1>
+          <div class="counter__items">
+            <button class="counter__inc">Добавить</button>
+            <button class="counter__dec">Убрать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
