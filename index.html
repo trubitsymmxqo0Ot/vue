@@ -12,8 +12,8 @@
         <div class="counter__body">
           <h1 class="counter__title">!{{title}}к сейчас: {{ counter * 2 + 3 }}</h1>
           <div class="counter__items">
-            <button class="counter__inc">Добавить</button>
-            <button class="counter__dec">Убрать</button>
+            <button class="counter__inc" v-on:click="counter++">Добавить</button>
+            <button class="counter__dec" v-on:click="counter--">Убрать</button>
           </div>
         </div>
       </div>
