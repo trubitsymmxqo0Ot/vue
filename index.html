@@ -17,8 +17,7 @@
               type="text"
               class="counter__input"
               :placeholder="inputText"
-              :value="inputValue"
-              @input="inputChangeHandler"
+              v-model="inputValue"
               @keypress.enter="handleAddNodes"
             />
           </div>
