@@ -26,7 +26,7 @@
             Добавить
           </button>
           <hr />
-          <ul class="counter__list">
+          <ul class="counter__list" v-if="nodes.length">
             <li class="counter__list-item" v-for="(myNode, idx) in nodes">
               {{myNode}}
               <button class="counter__delete" v-on:click="deleteNode(idx)">
@@ -34,6 +34,7 @@
               </button>
             </li>
           </ul>
+          <div v-else class="counter__label">Заметок нет. Добавьте первую заметку</div>
         </div>
       </div>
     </div>
