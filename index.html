@@ -26,15 +26,17 @@
             Добавить
           </button>
           <hr />
-          <ul class="counter__list" v-if="nodes.length">
+          <ul class="counter__list" v-if="nodes.length !== 0">
             <li class="counter__list-item" v-for="(myNode, idx) in nodes">
-              ({{idx}}) {{toUpperCaseMethod(myNode)}}
+              ({{idx + 1}}) {{toUpperCaseMethod(myNode)}}
               <button class="counter__delete" @click="deleteNode(idx)">
                 Удалить
               </button>
             </li>
           </ul>
           <div v-else class="counter__label">Заметок нет. Добавьте первую заметку</div>
+          <hr/>
+          <div class="counter__sub-title">Заметок: {{nodes.length}} | Удвоенное число: {{doubleNodes}} </div>
         </div>
       </div>
     </div>

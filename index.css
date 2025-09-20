@@ -81,7 +81,7 @@ textarea:focue, input:focus {
 }
 
 hr {
-  margin: 0 0 10px 0;
+  margin: 10px 0;
 }
 
 .counter__delete {
