@@ -5,48 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue</title>
     <link href="index.css" rel="stylesheet" />
+    <style>
+      [v-cloack] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <div id="root">
-      <div class="counter">
-        <div class="counter__body">
-          <h1 
-          class="counter__title" 
-          :style="{
-            color: inputValue.length < 5 ? 'red' : 'black',
-            fontSize: inputValue.length < 5 ? '18px' : '25px'
-          }">{{ title }}</h1>
-          <h2 class="counter__answer">answer: {{inputValue}}</h2>
-          <div class="counter__items">
-            <input
-              type="text"
-              class="counter__input"
-              :placeholder="inputText"
-              v-model="inputValue"
-              @keypress.enter="handleAddNodes"
-            />
-          </div>
-          <button 
-          :class="['counter__btn', 'bold', {newStyle: inputValue.length > 2 }]" 
-          @click="handleAddNodes"
-          >Добавить</button>
-          <hr />
-          <ul class="counter__list" v-if="nodes.length !== 0">
-            <li class="counter__list-item" v-for="(myNode, idx) in nodes">
-              ({{idx + 1}}) {{toUpperCaseMethod(myNode)}}
-              <button class="counter__delete" @click="deleteNode(idx)">
-                Удалить
-              </button>
-            </li>
-          </ul>
-          <div v-else class="counter__label">
-            Заметок нет. Добавьте первую заметку
-          </div>
-          <hr />
-          <div class="counter__sub-title">
-            Заметок: {{nodes.length}} | Удвоенное число: {{doubleNodes}}
-          </div>
-        </div>
+    <div class="container" id="root" v-cloack>
+      <div class="card">
+        <h1 v-text="title" class="card__title"></h1>
+        <h2 v-once class="card__second-title">{{title}}</h2>
+        <h2 v-pre>{{title}}</h2>
+        <div v-html="myHtmlTag"></div>
+        <button class="card__new-title" @click="title='Новое значение'">
+          Новое значение
+        </button>
       </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
