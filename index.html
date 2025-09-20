@@ -10,11 +10,18 @@
     <div id="root">
       <div class="counter">
         <div class="counter__body">
-          <h1 class="counter__title">!{{title}}к сейчас: {{ counter * 2 + 3 }}</h1>
+          <h1 class="counter__title">{{ title }}</h1>
+          <h2 class="counter__answer">answer: {{inputValue}}</h2>
           <div class="counter__items">
-            <button class="counter__inc" v-on:click="counter++">Добавить</button>
-            <button class="counter__dec" v-on:click="counter--">Убрать</button>
+            <input
+              type="text"
+              class="counter__input"
+              v-bind:placeholder="placeholder"
+              v-bind:value="inputValue"
+              v-on:input="inputChangeHandler"
+            />
           </div>
+          <button class="counter__btn">Добавить</button>
         </div>
       </div>
     </div>
