@@ -28,7 +28,7 @@
           <hr />
           <ul class="counter__list" v-if="nodes.length">
             <li class="counter__list-item" v-for="(myNode, idx) in nodes">
-              {{myNode}}
+              ({{idx}}) {{toUpperCaseMethod(myNode)}}
               <button class="counter__delete" v-on:click="deleteNode(idx)">
                 Удалить
               </button>
