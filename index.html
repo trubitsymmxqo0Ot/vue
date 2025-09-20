@@ -10,7 +10,12 @@
     <div id="root">
       <div class="counter">
         <div class="counter__body">
-          <h1 class="counter__title">{{ title }}</h1>
+          <h1 
+          class="counter__title" 
+          :style="{
+            color: inputValue.length < 5 ? 'red' : 'black',
+            fontSize: inputValue.length < 5 ? '18px' : '25px'
+          }">{{ title }}</h1>
           <h2 class="counter__answer">answer: {{inputValue}}</h2>
           <div class="counter__items">
             <input
@@ -21,9 +26,7 @@
               @keypress.enter="handleAddNodes"
             />
           </div>
-          <button class="counter__btn" @click="handleAddNodes">
-            Добавить
-          </button>
+          <button class="counter__btn" @click="handleAddNodes">Добавить</button>
           <hr />
           <ul class="counter__list" v-if="nodes.length !== 0">
             <li class="counter__list-item" v-for="(myNode, idx) in nodes">
@@ -33,9 +36,13 @@
               </button>
             </li>
           </ul>
-          <div v-else class="counter__label">Заметок нет. Добавьте первую заметку</div>
-          <hr/>
-          <div class="counter__sub-title">Заметок: {{nodes.length}} | Удвоенное число: {{doubleNodes}} </div>
+          <div v-else class="counter__label">
+            Заметок нет. Добавьте первую заметку
+          </div>
+          <hr />
+          <div class="counter__sub-title">
+            Заметок: {{nodes.length}} | Удвоенное число: {{doubleNodes}}
+          </div>
         </div>
       </div>
     </div>
