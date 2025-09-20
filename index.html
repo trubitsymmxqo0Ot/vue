@@ -19,7 +19,9 @@
               v-bind:placeholder="placeholder"
               v-bind:value="inputValue"
               v-on:input="inputChangeHandler"
+              v-on:keypress.enter="handleAddNodes" 
             />
+              <!-- Запись выше (keypress.enter) говорит о том, что при нажатии на Enter сработает метод handleAddNodes -->
           </div>
           <button class="counter__btn" v-on:click="handleAddNodes">Добавить</button>
           <hr/>
