@@ -92,3 +92,11 @@ hr {
   padding: 5px 10px;
   border-radius: 7px;
 }
+
+.bold {
+  font-weight: bold;
+  color: red;
+}
+.newStyle {
+  background-color: black;
+}

@@ -26,7 +26,10 @@
               @keypress.enter="handleAddNodes"
             />
           </div>
-          <button class="counter__btn" @click="handleAddNodes">Добавить</button>
+          <button 
+          :class="['counter__btn', 'bold', {newStyle: inputValue.length > 2 }]" 
+          @click="handleAddNodes"
+          >Добавить</button>
           <hr />
           <ul class="counter__list" v-if="nodes.length !== 0">
             <li class="counter__list-item" v-for="(myNode, idx) in nodes">
