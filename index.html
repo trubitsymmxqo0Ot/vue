@@ -16,20 +16,20 @@
             <input
               type="text"
               class="counter__input"
-              v-bind:placeholder="placeholder"
-              v-bind:value="inputValue"
-              v-on:input="inputChangeHandler"
-              v-on:keypress.enter="handleAddNodes"
+              :placeholder="inputText"
+              :value="inputValue"
+              @input="inputChangeHandler"
+              @keypress.enter="handleAddNodes"
             />
           </div>
-          <button class="counter__btn" v-on:click="handleAddNodes">
+          <button class="counter__btn" @click="handleAddNodes">
             Добавить
           </button>
           <hr />
           <ul class="counter__list" v-if="nodes.length">
             <li class="counter__list-item" v-for="(myNode, idx) in nodes">
               ({{idx}}) {{toUpperCaseMethod(myNode)}}
-              <button class="counter__delete" v-on:click="deleteNode(idx)">
+              <button class="counter__delete" @click="deleteNode(idx)">
                 Удалить
               </button>
             </li>
