@@ -21,6 +21,14 @@
         <button class="card__new-title" @click="title='Новое значение'">
           Новое значение
         </button>
+        <div v-for="(item, idx) in 7">id: {{idx}} | {{item}}</div>
+        <hr />
+        <div v-for="(item, key) in address">
+          key: {{ key }} | item: {{item}}
+        </div>
+        <div v-for="(item, id) in items" @click="items.splice(id, 1)">
+          myKey: {{item}}
+        </div>
       </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
