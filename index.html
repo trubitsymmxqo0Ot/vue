@@ -16,19 +16,10 @@
       <div class="card">
         <h1 v-text="title" class="card__title"></h1>
         <h2 v-once class="card__second-title">{{title}}</h2>
-        <h2 v-pre>{{title}}</h2>
-        <div v-html="myHtmlTag"></div>
-        <button class="card__new-title" @click="title='Новое значение'">
-          Новое значение
-        </button>
-        <div v-for="(item, idx) in 7">id: {{idx}} | {{item}}</div>
-        <hr />
-        <div v-for="(item, key) in address">
-          key: {{ key }} | item: {{item}}
-        </div>
-        <div v-for="(item, id) in items" @click="items.splice(id, 1)">
-          myKey: {{item}}
-        </div>
+        <ul v-if="1 > 2">
+          <li>Список</li>
+        </ul>
+        <div v-show="1 > 2">Точно будет в DOM</div>
       </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
