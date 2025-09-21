@@ -15,7 +15,7 @@
     <div class="container" id="root" v-cloak>
       <div class="card">
         <div>
-          <input type="text" @keyup.enter="addItem" ref="myInput">
+          <input type="text" @keyup.enter="addItem, log()" ref="myInput">
         </div>
         <h1 v-text="title" class="card__title"></h1>
         <h2 v-once class="card__second-title">{{title}}</h2>
