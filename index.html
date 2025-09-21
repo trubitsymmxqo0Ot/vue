@@ -20,6 +20,14 @@
           <li>Список</li>
         </ul>
         <div v-show="1 > 2">Точно будет в DOM</div>
+        <div
+          v-for="(item, id) in items"
+          @click="items.splice(id, 1)"
+          :key="item"
+        >
+          {{item}}
+          <input type="text" @click.stop>
+        </div>
       </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
