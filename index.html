@@ -21,12 +21,12 @@
         </ul>
         <div v-show="1 > 2">Точно будет в DOM</div>
         <div
-          v-for="(item, id) in items"
+          v-for="(item, id) in evenItems"
           @click="items.splice(id, 1)"
           :key="item"
         >
           {{item}}
-          <input type="text" @click.stop>
+          <input type="text" @click.stop />
         </div>
       </div>
     </div>
