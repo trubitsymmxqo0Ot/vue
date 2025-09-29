@@ -1,30 +1,23 @@
-const App = {
-	data: () => ({
-		title: 'Что-то',
-		myHtmlTag: '<div class="myHtmlTag">Это мой кастомный тег</div>',
-		address: {
-			city: "Moscow",
-			country: "Russia",
-		},
-		items: [1,2,3,4,5,6],
-	}),
-	methods: {
-		addItem() {
-			this.items.unshift(this.$refs.myInput.value);
-			this.$refs.myInput.value = '';
-		},
-		log(){
-			console.log("Объект успешно добавился")
+const app = Vue.createApp({
+	data(){
+		return {
+			title: 'Это title из свойства template'
 		}
 	},
-	computed: {
-		evenItems() {
-			return this.items.filter(i => i % 2 === 0)
-		}
-	}
-}
-Vue.createApp(App).mount('#root');
+	template: `
+		<div class="card">
+			<h1 class="card__title">{{ title }}</h1>
+			<button class="card__second-title" @click="title = 'Изменили'">Изменить</button>
+		</div>
+	`
+})
+
+app.mount('#root');
 
 /*
-	Также, мы можем навесить сразу несколько функцию на одно событие через запятую. Особых каких-то ньюансов тут нет, так что все примеры в коде
+	Представим такую ситуацию, что у нас нет никакого шаблона в html. В таком случае, vue начнет 
+	кинет warning, раньше он этого не делал, т.к. мы писали какой-то шаблон, какие-то теги и прочее. Но что
+	делать, если мы хотим задать шаблон как-то динамически? Мы можем использовать свойство template, оно позволяет
+	прокинуть шаблон внутрь html. При всем при этом, внутри этого шаблона можно использовать интерполяцию, какие-то
+	методы и директивы
 */

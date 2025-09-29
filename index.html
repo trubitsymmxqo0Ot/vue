@@ -12,26 +12,7 @@
     </style>
   </head>
   <body>
-    <div class="container" id="root" v-cloak>
-      <div class="card">
-        <div>
-          <input type="text" @keyup.enter="addItem, log()" ref="myInput">
-        </div>
-        <h1 v-text="title" class="card__title"></h1>
-        <h2 v-once class="card__second-title">{{title}}</h2>
-        <ul v-if="1 > 2">
-          <li>Список</li>
-        </ul>
-        <div v-show="1 > 2">Точно будет в DOM</div>
-        <div
-          v-for="(item, id) in items"
-          @click="items.splice(id, 1)"
-          :key="item"
-        >
-          {{item}}
-          <input type="text" @click.stop />
-        </div>
-      </div>
+    <div id="root">
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./main.js"></script>
