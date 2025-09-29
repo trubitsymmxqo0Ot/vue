@@ -13,6 +13,13 @@
   </head>
   <body>
     <div id="root">
+      <div class="card">
+        <h1 class="card__title">{{title}}</h1>
+        <button @click="title='Изменили'">Изменить</button>
+      </div>
+    </div>
+    <div id="root2">
+      <h2 class="card__title">{{title}}</h2>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./main.js"></script>
