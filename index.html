@@ -13,13 +13,39 @@
   </head>
   <body>
     <div id="root">
-      <div class="card">
-        <h1 class="card__title">{{title}}</h1>
-        <button @click="title='Изменили'">Изменить</button>
+      <div class="container">
+        <div class="card">
+          <h1 class="card__title">План по изучению Vue</h1>
+          <p class="card__text">{{text}}</p>
+          <ul class="card__item-select">
+            <!-- card__item-select_item -->
+            <li
+              class="card__item-select_item"
+              :key="items.id"
+              v-for="(items, idx) in info"
+              @click="showText(idx)"
+            >
+              <span
+                :class="{'card__item-select__item-span': true, 'oldElem': activeId > items.id, 'active': activeId === items.id}"
+                >{{items.id}}</span
+              >
+              {{items.title}}
+            </li>
+          </ul>
+          <div class="card__item-btn">
+            <button
+              :class="{'card__item-btn_back': true, 'none': activeId === 0}"
+              @click="prevStep(), showText(activeId)"
+              :disabled="activeId === 0"
+            >
+              Назад
+            </button>
+            <button class="card__item-btn_forward" @click="nextStep(), showText(activeId)">
+              {{activeId < info.length - 1 ? "Вперед" : "Закончить"}}
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div id="root2">
-      <h2 class="card__title">{{title}}</h2>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./main.js"></script>
