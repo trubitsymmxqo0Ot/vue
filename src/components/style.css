@@ -1,0 +1,46 @@
+body {
+	background-color: rgba(0,0,0, 0.8);
+	color: #fff;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+button {
+	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+	color: #fff;
+}
+
+.container {
+	max-width: 900px;
+	margin: 15px auto;
+}
+
+.title {
+	font-size: 22px;
+	text-align: center;
+}
+
+.news {
+	background-color: #fff;
+	color: #000;
+	padding: 30px 15px;
+	border-radius: 15px;
+}
+
+.news__text {
+	font-size: 20px;
+	text-align: center;
+	margin: 0 0 15px 0;
+}
+
+.news__button {
+	color: #9FC0B6FF;
+	border: 2px solid #9FC0B6FF;
+	font-size: 18px;
+	padding: 5px;
+	border-radius: 10px;
+	display: block;
+	max-width: 250px;
+	margin: 0 auto 25px;
+}
