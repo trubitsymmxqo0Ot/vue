@@ -5,10 +5,10 @@ export default {
     return {
       now: new Date().toLocaleDateString(),
       news: [
-        { id: 0, title: "Какая-то новость 1" },
-        { id: 1, title: "Новая новость 2" },
-        { id: 2, title: "Ну точно новая новость 3" },
-        { id: 3, title: "Самая новая новость!! 4" },
+        { id: 0, title: "Какая-то новость 1", },
+        { id: 1, title: "Новая новость 2", },
+        { id: 2, title: "Ну точно новая новость 3", },
+        { id: 3, title: "Самая новая новость!! 4", },
       ],
     };
   },
@@ -27,6 +27,7 @@ export default {
       v-for="items in news"
       :key="items.id"
       :title="items.title"
+      :id="items.id"
     ></app-news>
     <!-- title="Статичные данные" так мы бы передали пропс со статикой -->
     <!-- <AppNews /> Если у нас camelCase, то тогда нужно использовать такой тег -->

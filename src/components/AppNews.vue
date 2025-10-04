@@ -8,7 +8,13 @@
 
 <script>
 export default {
-	props: ['title'],
+	props: {
+		title: String, //Валидация в одну строку, не тонкая валидация
+		id: {
+			type: Number,
+			required: true,
+		},
+	},	
 	data(){
 		return {
 			isOpen: false,
