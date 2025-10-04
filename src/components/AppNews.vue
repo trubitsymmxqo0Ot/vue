@@ -1,8 +1,8 @@
 <template>
 	<div class="news">
 		<p class="news__text">{{ title }}</p>
-		<button @click="isOpen = !isOpen" class="news__button">Открыть</button>
-		<p v-if="isOpen">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sunt natus quis eum itaque, veniam ullam vel corporis nihil. Ullam iste qui ab beatae voluptatibus? Voluptatibus quia necessitatibus aut eius?</p>
+		<button @click="open" class="news__button">Открыть</button>
+		<p v-if="isNewOpen">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sunt natus quis eum itaque, veniam ullam vel corporis nihil. Ullam iste qui ab beatae voluptatibus? Voluptatibus quia necessitatibus aut eius?</p>
 	</div>
 </template>
 
@@ -14,10 +14,26 @@ export default {
 			type: Number,
 			required: true,
 		},
+		isOpen: {
+			type: Boolean,
+			required: false,
+			default: false,
+			validator(value){
+				return value === true || value === false
+			}
+		}
 	},	
 	data(){
 		return {
-			isOpen: false,
+			isNewOpen: this.isOpen,
+		}
+	},
+	methods: {
+		open() {
+			this.isNewOpen = !this.isNewOpen;
+			if(this.isNewOpen) {
+				this.$emit('open-flag', 42, 32);
+			}
 		}
 	}
 }

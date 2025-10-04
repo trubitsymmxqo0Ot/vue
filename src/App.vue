@@ -4,11 +4,12 @@ export default {
   data() {
     return {
       now: new Date().toLocaleDateString(),
+      openRate: 0,
       news: [
-        { id: 0, title: "Какая-то новость 1", },
-        { id: 1, title: "Новая новость 2", },
-        { id: 2, title: "Ну точно новая новость 3", },
-        { id: 3, title: "Самая новая новость!! 4", },
+        { id: 0, title: "Какая-то новость 1", isOpen: false },
+        { id: 1, title: "Новая новость 2", isOpen: false },
+        { id: 2, title: "Ну точно новая новость 3", isOpen: false },
+        { id: 3, title: "Самая новая новость!! 4", isOpen: false },
       ],
     };
   },
@@ -17,17 +18,26 @@ export default {
     // AppNews: AppNews,
     "app-news": AppNews,
   },
+  methods: {
+    openNews(data, data2){
+      this.openRate++;
+      console.log(data, data2);
+    }
+  }
 };
 </script>
 
 <template>
   <div class="container">
     <h1 class="title">Новости на {{ now }}</h1>
+    <span>Новость была открыта {{ openRate }} раз</span>
     <app-news
       v-for="items in news"
       :key="items.id"
       :title="items.title"
       :id="items.id"
+      :is-open="items.isOpen"
+      @open-flag="openNews"
     ></app-news>
     <!-- title="Статичные данные" так мы бы передали пропс со статикой -->
     <!-- <AppNews /> Если у нас camelCase, то тогда нужно использовать такой тег -->
