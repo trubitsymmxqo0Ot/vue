@@ -21,11 +21,17 @@ button {
 	text-align: center;
 }
 
+.title__text {
+	display: block;
+	margin: 0 0 15px 0;
+}
+
 .news {
 	background-color: #fff;
 	color: #000;
 	padding: 30px 15px;
 	border-radius: 15px;
+	margin: 0 0 30px 0;
 }
 
 .news__text {
@@ -43,4 +49,25 @@ button {
 	display: block;
 	max-width: 250px;
 	margin: 0 auto 25px;
+	transition: 500ms all;
+}
+.news__button:hover {
+	background-color: #9FC0B6FF;
+	color: #fff;
+}
+
+.news__button-reverse {
+	font-size: 18px;
+	padding: 5px;
+	border-radius: 10px;
+	display: block;
+	max-width: 250px;
+	margin: 0 auto 25px;
+	background-color: #9FC0B6FF;
+	color: #fff;
+	transition: 500ms all;
+}
+.news__button-reverse:hover {
+	background-color: transparent;
+	color: #9FC0B6FF;
 }
