@@ -23,6 +23,15 @@ export default {
 			}
 		}
 	},	
+	// emits: ['open-flag'], можем указывать так, если типизация не нужна
+	emits: {
+		'open-flag'(num) {
+			if(num) {
+				return true
+			}
+			console.warn('Не получили 42')
+		}
+	},
 	data(){
 		return {
 			isNewOpen: this.isOpen,
@@ -32,7 +41,7 @@ export default {
 		open() {
 			this.isNewOpen = !this.isNewOpen;
 			if(this.isNewOpen) {
-				this.$emit('open-flag', 42, 32);
+				this.$emit('open-flag', 42);
 			}
 		}
 	}
